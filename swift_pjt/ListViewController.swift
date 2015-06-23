@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  ViewController.swift
 //  swift_pjt
 //
 //  Created by 佐藤宗一郎 on 2015/06/17.
@@ -8,33 +8,20 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
+class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
     var addBtn: UIBarButtonItem!
-    @IBOutlet var tableView : UITableView!
-    /*
-    var productList = [
-        CTModel(titleName:"Apple", categoryName:"fruit"),
-        CTModel(titleName:"Peach", categoryName:"fruit"),
-        CTModel(titleName:"Pineapple", categoryName:"fruit"),
-        CTModel(titleName:"BaseBall", categoryName:"sports"),
-        CTModel(titleName:"SnowBoard", categoryName:"sports"),
-        CTModel(titleName:"iMac", categoryName:"device"),
-        CTModel(titleName:"iPhone", categoryName:"device"),
-        CTModel(titleName:"iWatch", categoryName:"device"),
-    ]*/
+    var tableView : UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Status Barの高さを取得する.
-        let barHeight: CGFloat = UIApplication.sharedApplication().statusBarFrame.size.height
+        // Do any additional setup after loading the view, typically from a nib.
         
         // Viewの高さと幅を取得する.
         let displayWidth: CGFloat = self.view.frame.width
         let displayHeight: CGFloat = self.view.frame.height
         
-        tableView = UITableView(frame: CGRect(x: 0, y: 0, width: displayWidth, height: displayHeight - barHeight))
+        tableView = UITableView(frame: CGRect(x: 0, y: 0, width: displayWidth, height: displayHeight))
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -62,12 +49,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 // エラー処理
         })
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
+        // Dispose of any resources that can be recreated.
     }
-    
+
     // addBtnをタップしたときのアクション
     func onClick() {
         //let second = SecondViewController()
@@ -94,5 +81,5 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         return UITableViewCell()
     }
-    
 }
+
