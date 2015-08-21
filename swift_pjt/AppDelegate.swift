@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  swift_pjt
 //
-//  Created by 佐藤宗一郎 on 2015/06/17.
+//  Created by 佐藤宗一郎s on 2015/06/17.
 //  Copyright (c) 2015年 佐藤宗一郎. All rights reserved.
 //
 
